@@ -1,4 +1,7 @@
 {
+  "compilerOptions": {
+    "moduleDetection": "force"
+  },
   "engines": {
     "node": ">=20.6.0"
   },
