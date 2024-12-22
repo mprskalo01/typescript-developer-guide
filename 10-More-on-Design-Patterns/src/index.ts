@@ -1,23 +1,13 @@
-// Simple Bubble Sort Algorithm
+import { Sorter } from './classes/Sorter';
+import { NumbersCollection } from './classes/NumbersCollection';
+import { CharactersCollection } from './classes/CharactersCollection';
 
-class Sorter {
-  constructor(public collection: number[]) {}
-  sort(): void {
-    const { length } = this.collection;
-    for (let i = 0; i < length; i++) {
-      for (let j = 0; j < length - i - 1; j++) {
-        if (this.collection[j] > this.collection[j + 1]) {
-          const leftHand = this.collection[j];
-          this.collection[j] = this.collection[j + 1];
-          this.collection[j + 1] = leftHand;
-        }
-      }
-    }
-  }
-}
+const numbersCollection = new NumbersCollection([10, 3, -5, 0, 7]);
+const sorterNumbers = new Sorter(numbersCollection);
+// sorterNumbers.sort();
+// console.log(numbersCollection.data);
 
-const sorter = new Sorter([10, 3, -5, 0]);
-
-sorter.sort();
-
-console.log(sorter.collection);
+const charactersCollection = new CharactersCollection('ACBKDOE');
+const sorterString = new Sorter(charactersCollection);
+sorterString.sort();
+console.log(charactersCollection.data);
