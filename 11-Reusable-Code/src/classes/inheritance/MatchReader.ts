@@ -1,5 +1,5 @@
 import { CsvFileReader } from './CsvFileReader';
-import { MatchResult } from '../../types/MatchResult';
+import { MatchResult } from '../../interfaces/MatchResult';
 import { dateStringToDate } from '../../utils/utils';
 
 type MatchData = [Date, string, string, number, number, MatchResult, string];
