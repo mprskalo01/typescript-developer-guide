@@ -1,15 +1,23 @@
 import { MatchReader } from './classes/MatchReader';
+import { CsvFileReader } from './classes/CsvFileReader';
+import { MatchResult } from './types/MatchResult';
 
-const matchReader = new MatchReader('football.csv');
+// create an object that satisfies the 'DataReader' interface
 
-console.log(matchReader.data[0][0]);
+const csvFileReader = new CsvFileReader('football.csv');
 
-// let manUnitedWins = 0;
-// reader.data.forEach(match => {
-//   if (
-//     (match[1] === 'Man United' && match[5] === matchResult.HomeWin) ||
-//     (match[2] === 'Man United' && match[5] === matchResult.AwayWin)
-//   )
-//     manUnitedWins++;
-// });
-// console.log(`Man United won ${manUnitedWins} games`);
+// create an instance of MatchReader and pass in something satisfying the DataReader interface
+const matchReader = new MatchReader(csvFileReader);
+matchReader.load();
+// matchReader.matches
+
+let manUnitedWins = 0;
+
+matchReader.matches.forEach(match => {
+  if (
+    (match[1] === 'Man United' && match[5] === MatchResult.HomeWin) ||
+    (match[2] === 'Man United' && match[5] === MatchResult.AwayWin)
+  )
+    manUnitedWins++;
+});
+console.log(`Man United won ${manUnitedWins} games`);
