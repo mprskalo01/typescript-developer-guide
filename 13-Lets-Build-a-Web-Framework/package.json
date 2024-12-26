@@ -1,0 +1,21 @@
+{
+  "name": "13-lets-build-a-web-framework",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start:db": "npx json-server -w db.json",
+    "start:parcel": "npx parcel index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "description": "",
+  "dependencies": {
+    "json-server": "^0.17.4"
+  },
+  "devDependencies": {
+    "buffer": "^6.0.3",
+    "process": "^0.11.10"
+  }
+}
